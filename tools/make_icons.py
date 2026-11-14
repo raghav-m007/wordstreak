@@ -7,10 +7,10 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "icons")
-BG = (194, 97, 31)
-CARD = (250, 246, 239)
+BG = (74, 39, 131)
+CARD = (255, 255, 255)
 INK = (28, 26, 22)
-ON = (47, 125, 79)
+ON = (92, 178, 109)
 OFF = (221, 215, 204)
 
 FONTS = [

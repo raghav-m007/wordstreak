@@ -4,19 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Wordstreak</title>
-<meta name="description" content="Flashcards for your CAT word list: spaced recall, a word counts as learnt after 5 correct days in a row.">
-<meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Vocabulary quiz for your CAT word list: pick the meaning, a word is learnt after 5 correct days in a row.">
+<meta name="theme-color" content="#4a2783">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Wordstreak">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 <link rel="icon" href="./icons/icon-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="./app.css">
 </head>
 <body>
@@ -26,7 +22,7 @@
   <symbol id="i-words" viewBox="0 0 24 24"><rect x="3.5" y="6" width="13" height="14" rx="2"/><path d="M7.5 6V4.6A1.6 1.6 0 0 1 9.1 3h9.8a1.6 1.6 0 0 1 1.6 1.6V15a1.6 1.6 0 0 1-1.6 1.6h-2.4"/></symbol>
   <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l2-1.6-2-3.4-2.4.9a7.6 7.6 0 0 0-2.6-1.5L14 2.4h-4l-.4 2.5A7.6 7.6 0 0 0 7 6.4l-2.4-.9-2 3.4 2 1.6a7.6 7.6 0 0 0 0 3l-2 1.6 2 3.4 2.4-.9a7.6 7.6 0 0 0 2.6 1.5l.4 2.5h4l.4-2.5a7.6 7.6 0 0 0 2.6-1.5l2.4.9 2-3.4z"/></symbol>
   <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.6 7.6 0 0 1 0 11"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
   <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3"/><path d="M18.5 3v4h-4M5.5 21v-4h4"/></symbol>
 </svg>
 
@@ -41,12 +37,16 @@
 
     <div class="banner" id="banner" hidden></div>
 
-    <article class="hero" id="hero"></article>
+    <article class="panel hero" id="hero"></article>
 
-    <div class="tiles" id="tiles"></div>
+    <article class="panel overall">
+      <div class="ov-head"><strong>All words</strong><span id="ov-count"></span></div>
+      <div class="bar" aria-hidden="true"><span id="bar-learnt"></span><span id="bar-learning"></span></div>
+      <div class="legend" id="legend"></div>
+    </article>
 
-    <div class="bar" aria-hidden="true"><span id="bar-learnt"></span><span id="bar-learning"></span></div>
-    <p class="bar-label" id="bar-label"></p>
+    <h2 class="section-title">Levels</h2>
+    <div id="levels"></div>
 
     <p class="foot" id="sync-foot"></p>
   </section>
@@ -61,14 +61,21 @@
       <button data-f="learnt">Learnt</button>
       <button data-f="new">New</button>
     </div>
-    <ul class="list" id="list"></ul>
+    <ul class="list panel" id="list"></ul>
   </section>
 
   <!-- ================= SETTINGS ================= -->
   <section class="tab" id="tab-settings" hidden>
     <header class="top"><h1 class="brand">Settings</h1></header>
 
-    <div class="group">
+    <div class="group panel">
+      <div class="row col">
+        <div><strong>Question style</strong><small id="style-note"></small></div>
+        <div class="seg small" id="qstyle">
+          <button data-q="choice">Pick the meaning (4 options)</button>
+          <button data-q="flip">Flashcard (recall, then flip)</button>
+        </div>
+      </div>
       <div class="row">
         <div><strong>New words per day</strong><small>How many unseen words join each day</small></div>
         <div class="stepper"><button data-step="-1" aria-label="Fewer">−</button><output id="newPerDay">15</output><button data-step="1" aria-label="More">+</button></div>
@@ -80,16 +87,20 @@
           <button data-s="crunch">Exam crunch · daily</button>
         </div>
       </div>
-    </div>
-
-    <div class="group">
       <div class="row">
-        <div><strong>Word list</strong><small id="sync-info"></small></div>
-        <button class="btn ghost" id="sync-now"><svg><use href="#i-sync"/></svg>Check now</button>
+        <div><strong>Read words aloud</strong><small id="voice-note">Tap the speaker on any card</small></div>
+        <button class="btn ghost" id="voice-test"><svg><use href="#i-speak"/></svg>Test</button>
       </div>
     </div>
 
-    <div class="group">
+    <div class="group panel">
+      <div class="row">
+        <div><strong>Word list</strong><small id="sync-info"></small></div>
+        <button class="btn ghost" id="sync-now"><svg><use href="#i-sync"/></svg>Check</button>
+      </div>
+    </div>
+
+    <div class="group panel">
       <div class="row">
         <div><strong>Backup</strong><small>Progress lives on this phone. Copy it out now and then.</small></div>
       </div>
@@ -99,77 +110,92 @@
       </div>
     </div>
 
-    <details class="group how" open>
+    <details class="group panel how">
       <summary>How it works</summary>
       <ol>
-        <li><b>Recall first, then flip.</b> Say the meaning in your head before you tap. Trying to pull it out of memory is what makes it stick; reading the answer does very little.</li>
-        <li><b>Be strict.</b> Tap <em>Got it</em> only if you had the meaning before flipping. Half-right is a miss.</li>
-        <li><b>Learnt = 5 correct in a row, on 5 different days.</b> Only your first answer each day counts. Five right answers in one sitting is short-term memory; the same five spread over days is what lasts.</li>
-        <li><b>Gaps grow.</b> After each correct day the word waits longer: 1, 2, 3, then 5 days. A miss resets the streak to 0, brings the word back later in the same session until you get it once, and again tomorrow.</li>
+        <li><b>Pick the meaning before you see it.</b> Having to retrieve the answer is what makes it stick; just reading definitions does very little. If you don’t know, tap <em>I’m not sure</em> rather than guessing.</li>
+        <li><b>Learnt = 5 correct in a row, on 5 different days.</b> Five right answers in one sitting is short-term memory; the same five spread over days is what lasts.</li>
+        <li><b>Gaps grow.</b> After each correct day the word waits longer: 1, 2, 3, then 5 days. A miss resets the streak to 0, brings the word back later in the same session, and again tomorrow.</li>
+        <li><b>Only scheduled answers count.</b> Studying a level early or extra practice is fine, but a word only moves when its day has come.</li>
         <li><b>Learnt words still get check-ups</b> after 14, 30 and 60 days. Miss one and it goes back to Learning.</li>
-        <li><b>New words arrive from your sheet</b> automatically every other day. Add a word in column A of the Words tab and its meaning in column B.</li>
+        <li><b>New words arrive from your sheet</b> every other day. Add a word in column A of the Words tab and its meaning in column B.</li>
       </ol>
     </details>
 
-    <div class="group">
+    <div class="group panel">
       <div class="row"><div><strong>Start over</strong><small>Wipes all streaks on this phone</small></div><button class="btn danger" id="reset-all">Reset</button></div>
     </div>
     <p class="foot">Wordstreak · <a href="https://github.com/raghav-m007/wordstreak">source</a></p>
   </section>
 
   <nav class="tabbar" id="tabbar">
-    <button data-tab="today" class="on"><svg><use href="#i-today"/></svg><span>Today</span></button>
+    <button data-tab="today" class="on"><svg><use href="#i-today"/></svg><span>Study</span></button>
     <button data-tab="words"><svg><use href="#i-words"/></svg><span>Words</span></button>
     <button data-tab="settings"><svg><use href="#i-gear"/></svg><span>Settings</span></button>
   </nav>
 </div>
 
-<!-- ================= REVIEW (full screen) ================= -->
+<!-- ================= QUIZ (full screen) ================= -->
 <section class="review" id="review" hidden>
   <header class="rv-top">
-    <button class="icon" id="rv-close" aria-label="End session"><svg><use href="#i-close"/></svg></button>
-    <div class="rv-progress"><span id="rv-fill"></span></div>
+    <button class="navback" id="rv-close"><svg><use href="#i-back"/></svg><span>Done</span></button>
+    <span class="rv-title" id="rv-title"></span>
     <span class="rv-count" id="rv-count"></span>
   </header>
+  <div class="rv-progress"><span id="rv-fill"></span></div>
 
   <div class="rv-stage">
-    <article class="card" id="card" tabindex="0">
-      <div class="card-meta"><span class="chip" id="card-chip"></span><span class="dots" id="card-dots"></span></div>
-      <h2 class="card-word" id="card-word"></h2>
-      <p class="card-pron" id="card-pron"></p>
-      <button class="icon speak" id="card-speak" aria-label="Pronounce"><svg><use href="#i-speak"/></svg></button>
-      <p class="card-hint" id="card-hint" hidden></p>
-      <div class="card-back" id="card-back" hidden>
-        <p class="meaning" id="b-meaning"></p>
-        <dl>
-          <div id="b-hindi-row"><dt>Hindi</dt><dd id="b-hindi"></dd></div>
-          <div id="b-example-row"><dt>Example</dt><dd id="b-example"></dd></div>
-          <div id="b-notes-row"><dt>Your note</dt><dd id="b-notes"></dd></div>
-        </dl>
+    <article class="qcard" id="qcard">
+      <div class="q-head" id="q-head"><strong id="q-head-title"></strong><small id="q-head-sub"></small></div>
+      <div class="q-word-row">
+        <h2 class="q-word" id="q-word"></h2>
+        <button class="speak" id="q-speak" aria-label="Pronounce"><svg><use href="#i-speak"/></svg></button>
       </div>
+      <p class="q-pron" id="q-pron" hidden></p>
+
+      <!-- multiple choice -->
+      <ul class="options" id="options"></ul>
+
+      <!-- flashcard -->
+      <div class="flip-front" id="flip-front" hidden>
+        <p class="hint" id="hint" hidden></p>
+        <div class="flip-btns">
+          <button class="opt-btn" id="btn-hint">Hint</button>
+          <button class="opt-btn strong" id="btn-flip">Show meaning</button>
+        </div>
+      </div>
+
+      <!-- answer -->
+      <div class="answer" id="answer" hidden>
+        <p class="a-wrong" id="a-wrong" hidden></p>
+        <p class="a-meaning" id="a-meaning"></p>
+        <p class="a-example" id="a-example"></p>
+        <dl>
+          <div id="a-hindi-row"><dt>Hindi</dt><dd id="a-hindi"></dd></div>
+          <div id="a-notes-row"><dt>Your note</dt><dd id="a-notes"></dd></div>
+        </dl>
+        <div class="a-progress">
+          <p id="a-progress-text"></p>
+          <span class="dots big" id="a-dots"></span>
+        </div>
+      </div>
+
+      <div class="grade" id="grade" hidden>
+        <button class="opt-btn miss" id="btn-miss">Didn’t know it</button>
+        <button class="opt-btn got" id="btn-got">Knew it</button>
+      </div>
+      <button class="next" id="btn-next" hidden>Next word ›</button>
     </article>
   </div>
-
-  <footer class="rv-actions">
-    <div class="front-actions" id="front-actions">
-      <button class="btn ghost" id="btn-hint">Hint</button>
-      <button class="btn primary" id="btn-flip">Show answer</button>
-    </div>
-    <div class="grade-actions" id="grade-actions" hidden>
-      <button class="btn miss" id="btn-miss">Missed it</button>
-      <button class="btn got" id="btn-got">Got it</button>
-    </div>
-    <p class="rv-note" id="rv-note"></p>
-  </footer>
 </section>
 
 <!-- ================= DONE ================= -->
 <section class="done" id="done" hidden>
-  <div class="done-inner">
+  <div class="panel done-inner">
     <div class="done-mark">✓</div>
     <h2 id="done-title">Session done</h2>
     <p id="done-body"></p>
-    <button class="btn primary" id="done-close">Back to today</button>
+    <button class="next" id="done-close">Back</button>
   </div>
 </section>
 

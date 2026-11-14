@@ -1,15 +1,16 @@
 // Scheduling rules. Pure functions, no DOM, so they are easy to test.
 //
 // The research this follows (see README):
-//  * Active recall beats re-reading: you try to say the meaning BEFORE you flip.
+//  * Retrieval beats re-reading: you have to pick/recall the meaning before you see it.
 //  * Spacing beats cramming: recalls on separate days stick far better than
 //    the same number of recalls in one sitting (Rawson & Dunlosky's
 //    "successive relearning": ~68% vs ~26% one-week retention).
 //  * Expanding gaps (Leitner boxes / Anki): each success pushes the next
 //    review further out; a miss sends the card back to the start.
 //
-// So "learnt = 5 correct in a row" counts ONE answer per word per day (the
-// first one). A miss resets the streak, and the word comes back a few cards
+// So "learnt = 5 correct in a row" counts only SCHEDULED answers: a new word,
+// or a word on (or after) its due day, first answer of the day. Answering a
+// word early (extra practice, level study) is fine but doesn't count. A miss resets the streak, and the word comes back a few cards
 // later in the same session until you recall it once (relearning), but that
 // retry does not count toward the streak.
 
@@ -50,10 +51,20 @@ export function status(p) {
   return p.learnt ? 'learnt' : 'learning';
 }
 
-/** What a "Got it" would do, for the hint under the buttons. */
+/**
+ * Only scheduled answers count: a new word, or a word whose day has come,
+ * answered for the first time today. Anything else is free practice.
+ */
+export function isScheduled(p, day) {
+  if (!p || !p.intro) return true;
+  if (p.last === day) return false;
+  return !p.due || p.due <= day;
+}
+
+/** What a correct answer would do, for the line under the answer. */
 export function preview(p, day, spacing) {
+  if (!isScheduled(p, day)) return { counted: false };
   p = { ...blank(), ...p };
-  if (p.last === day) return { counted: false };
   const streak = p.streak + 1;
   if (p.learnt) return { counted: true, streak, learnt: true, days: MAINT[Math.min(p.maint + 1, MAINT.length - 1)] };
   if (streak >= TARGET) return { counted: true, streak, learnt: true, becomesLearnt: true, days: MAINT[0] };
@@ -66,8 +77,8 @@ export function preview(p, day, spacing) {
  */
 export function grade(prev, correct, day, spacing = 'standard') {
   const p = { ...blank(), ...prev };
-  if (p.last === day) {
-    if (correct) p.pending = false;
+  if (!isScheduled(prev, day)) {
+    if (correct && p.last === day) p.pending = false;
     return { p, counted: false };
   }
   if (!p.intro) p.intro = day;

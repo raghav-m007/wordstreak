@@ -1,7 +1,10 @@
 # Wordstreak
 
-Flashcards for the CAT word list kept in the **Words** tab of a Google Sheet.
+Vocabulary quiz for the CAT word list kept in the **Words** tab of a Google Sheet, laid out like
+Magoosh's Vocabulary Builder: one word, four definitions plus "I'm not sure", then the meaning,
+example and Hindi word, and words grouped into levels of 10.
 A word counts as **learnt after 5 correct answers in a row, on 5 different days**.
+Settings also has a harder flashcard mode (recall the meaning yourself, then flip).
 
 Live: https://raghav-m007.github.io/wordstreak/ — on iPhone open it in Safari → Share → **Add to Home Screen**.
 
@@ -11,8 +14,8 @@ Built on the three findings with the strongest evidence behind them:
 
 | Idea | What the app does |
 |---|---|
-| **Active recall** (testing effect) — pulling an answer out of memory strengthens it far more than re-reading it | The card shows only the word. You say the meaning in your head, *then* flip and grade yourself. |
-| **Spacing** — recalls spread across days beat the same recalls crammed together | Only the first answer each day counts toward the 5-streak. Rawson & Dunlosky's *successive relearning* studies found ~68% one-week retention for recalls on separate days vs ~26% for the same number in one sitting. |
+| **Active recall** (testing effect) — pulling an answer out of memory strengthens it far more than re-reading it | You pick the meaning from four choices (or recall it yourself in flashcard mode) before seeing the answer. Wrong choices come from words with the same part of speech so guessing is harder. |
+| **Spacing** — recalls spread across days beat the same recalls crammed together | Only scheduled answers count toward the 5-streak (a new word, or one whose day has come; first answer of the day). Studying a level early is fine but doesn't move the streak. Rawson & Dunlosky's *successive relearning* studies found ~68% one-week retention for recalls on separate days vs ~26% for the same number in one sitting. |
 | **Expanding intervals** (Leitner boxes, Anki) | After each correct day the gap grows: 1 → 2 → 3 → 5 days. A miss resets the streak to 0 and the word returns tomorrow. |
 | **Relearning to criterion** | A missed word comes back a few cards later in the same session until you recall it once (that retry doesn't count toward the streak). |
 | **Maintenance** | Learnt words get check-ups after 14, 30 and 60 days. Miss one and it goes back to Learning. |

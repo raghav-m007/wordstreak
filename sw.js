@@ -1,5 +1,5 @@
 // Offline shell. Bump CACHE whenever the app's own files change.
-const CACHE = 'ws-v1';
+const CACHE = 'ws-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -15,7 +15,12 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  // cache: 'reload' skips the browser's HTTP cache so a new version really is new.
+  e.waitUntil(
+    caches.open(CACHE)
+      .then((c) => c.addAll(ASSETS.map((u) => new Request(u, { cache: 'reload' }))))
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener('activate', (e) => {
