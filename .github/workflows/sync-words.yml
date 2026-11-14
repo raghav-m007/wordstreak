@@ -1,0 +1,39 @@
+name: Sync words from the sheet
+
+# Every other day at 06:00 IST (00:30 UTC), plus a manual "Run workflow" button.
+on:
+  schedule:
+    - cron: '30 0 */2 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-words
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull the Words tab
+        env:
+          SHEET_CSV_URL: ${{ vars.SHEET_CSV_URL }}
+        run: |
+          if [ -z "$SHEET_CSV_URL" ]; then
+            echo "::warning::Repository variable SHEET_CSV_URL is not set yet (the Words tab's published CSV link)."
+            exit 0
+          fi
+          python3 tools/build_words.py "$SHEET_CSV_URL" words.json
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "wordstreak-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add words.json
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git commit -m "Sync words from sheet"
+          git push

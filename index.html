@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wordstreak</title>
+<meta name="description" content="Flashcards for your CAT word list: spaced recall, a word counts as learnt after 5 correct days in a row.">
+<meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Wordstreak">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./app.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-today" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 9.5h16M8.5 3v4M15.5 3v4"/></symbol>
+  <symbol id="i-words" viewBox="0 0 24 24"><rect x="3.5" y="6" width="13" height="14" rx="2"/><path d="M7.5 6V4.6A1.6 1.6 0 0 1 9.1 3h9.8a1.6 1.6 0 0 1 1.6 1.6V15a1.6 1.6 0 0 1-1.6 1.6h-2.4"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l2-1.6-2-3.4-2.4.9a7.6 7.6 0 0 0-2.6-1.5L14 2.4h-4l-.4 2.5A7.6 7.6 0 0 0 7 6.4l-2.4-.9-2 3.4 2 1.6a7.6 7.6 0 0 0 0 3l-2 1.6 2 3.4 2.4-.9a7.6 7.6 0 0 0 2.6 1.5l.4 2.5h4l.4-2.5a7.6 7.6 0 0 0 2.6-1.5l2.4.9 2-3.4z"/></symbol>
+  <symbol id="i-speak" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.6 7.6 0 0 1 0 11"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3"/><path d="M18.5 3v4h-4M5.5 21v-4h4"/></symbol>
+</svg>
+
+<div id="app">
+
+  <!-- ================= TODAY ================= -->
+  <section class="tab" id="tab-today">
+    <header class="top">
+      <h1 class="brand">Wordstreak</h1>
+      <span class="daystreak" id="daystreak" hidden></span>
+    </header>
+
+    <div class="banner" id="banner" hidden></div>
+
+    <article class="hero" id="hero"></article>
+
+    <div class="tiles" id="tiles"></div>
+
+    <div class="bar" aria-hidden="true"><span id="bar-learnt"></span><span id="bar-learning"></span></div>
+    <p class="bar-label" id="bar-label"></p>
+
+    <p class="foot" id="sync-foot"></p>
+  </section>
+
+  <!-- ================= WORDS ================= -->
+  <section class="tab" id="tab-words" hidden>
+    <header class="top"><h1 class="brand">Words</h1></header>
+    <input class="search" id="search" type="search" placeholder="Search words or meanings" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <div class="seg" id="filter" role="tablist">
+      <button data-f="all" class="on">All</button>
+      <button data-f="learning">Learning</button>
+      <button data-f="learnt">Learnt</button>
+      <button data-f="new">New</button>
+    </div>
+    <ul class="list" id="list"></ul>
+  </section>
+
+  <!-- ================= SETTINGS ================= -->
+  <section class="tab" id="tab-settings" hidden>
+    <header class="top"><h1 class="brand">Settings</h1></header>
+
+    <div class="group">
+      <div class="row">
+        <div><strong>New words per day</strong><small>How many unseen words join each day</small></div>
+        <div class="stepper"><button data-step="-1" aria-label="Fewer">−</button><output id="newPerDay">15</output><button data-step="1" aria-label="More">+</button></div>
+      </div>
+      <div class="row col">
+        <div><strong>Spacing</strong><small id="spacing-note"></small></div>
+        <div class="seg small" id="spacing">
+          <button data-s="standard">Standard · 1·2·3·5 days</button>
+          <button data-s="crunch">Exam crunch · daily</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="row">
+        <div><strong>Word list</strong><small id="sync-info"></small></div>
+        <button class="btn ghost" id="sync-now"><svg><use href="#i-sync"/></svg>Check now</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="row">
+        <div><strong>Backup</strong><small>Progress lives on this phone. Copy it out now and then.</small></div>
+      </div>
+      <div class="row btns">
+        <button class="btn ghost" id="export">Copy backup</button>
+        <button class="btn ghost" id="import">Restore</button>
+      </div>
+    </div>
+
+    <details class="group how" open>
+      <summary>How it works</summary>
+      <ol>
+        <li><b>Recall first, then flip.</b> Say the meaning in your head before you tap. Trying to pull it out of memory is what makes it stick; reading the answer does very little.</li>
+        <li><b>Be strict.</b> Tap <em>Got it</em> only if you had the meaning before flipping. Half-right is a miss.</li>
+        <li><b>Learnt = 5 correct in a row, on 5 different days.</b> Only your first answer each day counts. Five right answers in one sitting is short-term memory; the same five spread over days is what lasts.</li>
+        <li><b>Gaps grow.</b> After each correct day the word waits longer: 1, 2, 3, then 5 days. A miss resets the streak to 0, brings the word back later in the same session until you get it once, and again tomorrow.</li>
+        <li><b>Learnt words still get check-ups</b> after 14, 30 and 60 days. Miss one and it goes back to Learning.</li>
+        <li><b>New words arrive from your sheet</b> automatically every other day. Add a word in column A of the Words tab and its meaning in column B.</li>
+      </ol>
+    </details>
+
+    <div class="group">
+      <div class="row"><div><strong>Start over</strong><small>Wipes all streaks on this phone</small></div><button class="btn danger" id="reset-all">Reset</button></div>
+    </div>
+    <p class="foot">Wordstreak · <a href="https://github.com/raghav-m007/wordstreak">source</a></p>
+  </section>
+
+  <nav class="tabbar" id="tabbar">
+    <button data-tab="today" class="on"><svg><use href="#i-today"/></svg><span>Today</span></button>
+    <button data-tab="words"><svg><use href="#i-words"/></svg><span>Words</span></button>
+    <button data-tab="settings"><svg><use href="#i-gear"/></svg><span>Settings</span></button>
+  </nav>
+</div>
+
+<!-- ================= REVIEW (full screen) ================= -->
+<section class="review" id="review" hidden>
+  <header class="rv-top">
+    <button class="icon" id="rv-close" aria-label="End session"><svg><use href="#i-close"/></svg></button>
+    <div class="rv-progress"><span id="rv-fill"></span></div>
+    <span class="rv-count" id="rv-count"></span>
+  </header>
+
+  <div class="rv-stage">
+    <article class="card" id="card" tabindex="0">
+      <div class="card-meta"><span class="chip" id="card-chip"></span><span class="dots" id="card-dots"></span></div>
+      <h2 class="card-word" id="card-word"></h2>
+      <p class="card-pron" id="card-pron"></p>
+      <button class="icon speak" id="card-speak" aria-label="Pronounce"><svg><use href="#i-speak"/></svg></button>
+      <p class="card-hint" id="card-hint" hidden></p>
+      <div class="card-back" id="card-back" hidden>
+        <p class="meaning" id="b-meaning"></p>
+        <dl>
+          <div id="b-hindi-row"><dt>Hindi</dt><dd id="b-hindi"></dd></div>
+          <div id="b-example-row"><dt>Example</dt><dd id="b-example"></dd></div>
+          <div id="b-notes-row"><dt>Your note</dt><dd id="b-notes"></dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
+
+  <footer class="rv-actions">
+    <div class="front-actions" id="front-actions">
+      <button class="btn ghost" id="btn-hint">Hint</button>
+      <button class="btn primary" id="btn-flip">Show answer</button>
+    </div>
+    <div class="grade-actions" id="grade-actions" hidden>
+      <button class="btn miss" id="btn-miss">Missed it</button>
+      <button class="btn got" id="btn-got">Got it</button>
+    </div>
+    <p class="rv-note" id="rv-note"></p>
+  </footer>
+</section>
+
+<!-- ================= DONE ================= -->
+<section class="done" id="done" hidden>
+  <div class="done-inner">
+    <div class="done-mark">✓</div>
+    <h2 id="done-title">Session done</h2>
+    <p id="done-body"></p>
+    <button class="btn primary" id="done-close">Back to today</button>
+  </div>
+</section>
+
+<!-- ================= WORD SHEET ================= -->
+<div class="sheet-scrim" id="sheet-scrim" hidden></div>
+<section class="sheet" id="sheet" hidden>
+  <div class="sheet-grab"></div>
+  <div id="sheet-body"></div>
+</section>
+
+<div class="toast" id="toast" hidden></div>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

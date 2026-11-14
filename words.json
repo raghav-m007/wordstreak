@@ -1,0 +1,566 @@
+{
+ "updated": "2026-11-14T15:53:44Z",
+ "checked": "2026-11-14T15:58:13Z",
+ "count": 69,
+ "words": [
+  {
+   "id": "arcane",
+   "word": "arcane",
+   "meaning": "Known or understood by only a few people; mysterious, secret, or obscure.",
+   "hindi": "रहस्यमय (Rahasyamay) or गुप्त (Gupt).",
+   "example": "Many people find the arcane rules of cricket difficult to understand without watching several matches.",
+   "notes": []
+  },
+  {
+   "id": "awe",
+   "word": "awe",
+   "meaning": "A feeling of great respect, admiration, or wonder often mixed with fear or surprise - suprise out of respect / fear",
+   "hindi": "विस्मय (Vismay)",
+   "example": "She gazed in awe at the vastness of the Grand Canyon.",
+   "notes": []
+  },
+  {
+   "id": "not least because",
+   "word": "Not least because",
+   "meaning": "Used to emphasize a particularly important reason or example among several others.",
+   "hindi": "खास तौर से (Khaas taur se) or मुख्य रूप से (Mukhya roop se).",
+   "example": "She was very happy about the news, not least because it meant she could finally visit her family.",
+   "notes": [
+    "Its not the least or the unimportant reason"
+   ]
+  },
+  {
+   "id": "apathy",
+   "word": "apathy",
+   "meaning": "A lack of interest, enthusiasm, or concern; a state of being indifferent or having no emotion.",
+   "hindi": "उदासीनता (Udasinata) or अरुचि (Aruchi).",
+   "example": "Public apathy toward local elections often results in a very low voter turnout.",
+   "notes": []
+  },
+  {
+   "id": "inchoate",
+   "word": "inchoate",
+   "meaning": "Just begun and so not fully formed or developed; rudimentary or incomplete.",
+   "hindi": "अपरिपक्व (Aparipakva) or अविकसित (Aviksit).",
+   "example": "She had an inchoate idea for a novel, but she hadn't yet decided on the characters or the plot.",
+   "notes": []
+  },
+  {
+   "id": "precarious",
+   "word": "precarious",
+   "meaning": "Not securely held or in position; dangerously likely to fall or collapse; dependent on chance; uncertain.",
+   "hindi": "खतरनाक (Khatarnak) or अनिश्चित (Anishchit).",
+   "example": "The glass was placed in a precarious position on the edge of the table and looked like it would fall at any moment.",
+   "notes": []
+  },
+  {
+   "id": "dabbler",
+   "word": "dabbler",
+   "meaning": "A person who takes part in an activity in a casual or superficial way rather than seriously.",
+   "hindi": "शौक़ीन (Shaukeen) or ऊपरी तौर पर दिलचस्पी लेने वाला (Upari taur par dilchaspi lene wala).",
+   "example": "He is a dabbler in photography, taking photos only when he is on vacation but never learning the technical settings of his camera.",
+   "notes": []
+  },
+  {
+   "id": "conscription",
+   "word": "conscription",
+   "meaning": "The practice of ordering people by law to join the armed forces or compulsory enlistment for state service.",
+   "hindi": "अनिवार्य सैन्य भर्ती (Anivarya Sainya Bharti)",
+   "example": "During World War II, many countries used conscription to ensure they had enough soldiers for the front lines.",
+   "notes": []
+  },
+  {
+   "id": "eschew",
+   "word": "eschew",
+   "meaning": "To deliberately avoid using something or stay away from something.",
+   "hindi": "त्यागना (Tyagana) or परहेज करना (Parhez Karna).",
+   "example": "Many people choose to eschew sugary drinks in order to maintain a healthier lifestyle.",
+   "notes": []
+  },
+  {
+   "id": "provenance",
+   "word": "provenance",
+   "meaning": "The place of origin of something, or the history of ownership of a valued object or work of art.",
+   "hindi": "उद्गम (Udgam) or उत्पत्ति स्थान (Utpatti Sthan).",
+   "example": "The museum refused to buy the ancient artifact because its provenance could not be verified.",
+   "notes": []
+  },
+  {
+   "id": "ratify",
+   "word": "ratify",
+   "meaning": "To give formal approval to a treaty, contract, or agreement, making it officially valid.",
+   "hindi": "पुष्टि करना (Pushti Karna) or अनुसमर्थन करना (Anusamarthan Karna).",
+   "example": "The school board will ratify the new budget during their meeting next week.",
+   "notes": []
+  },
+  {
+   "id": "tokofication",
+   "word": "tokofication",
+   "meaning": "Tokofication is a slang term referring to the process of something becoming associated with or influenced by Tokopedia, often used to describe the integration of services into the platform.",
+   "hindi": "टोकोफिकेशन (Tokofication - interpreted as integration/platformization).",
+   "example": "Many small vendors are experiencing tokofication as they move their entire inventory onto the digital marketplace to reach more customers.",
+   "notes": []
+  },
+  {
+   "id": "tokofine",
+   "word": "tokofine",
+   "meaning": "A word used to describe a person, relationship, or environment that is harmful, unpleasant, or damaging to one's mental or emotional health.",
+   "hindi": "विषैला (Vishaila) or हानिकारक (Haanikaarak)",
+   "example": "She decided to leave her job because the office environment had become too toxic for her mental peace.",
+   "notes": []
+  },
+  {
+   "id": "delineated",
+   "word": "delineated",
+   "meaning": "To describe, portray, or set forth with accuracy or in detail; to mark the exact outline or boundary of something.",
+   "hindi": "चित्रण करना (Chitran karna) or रूपरेखा बनाना (Ruprekha banana).",
+   "example": "The architect used a red marker to delineate the specific areas on the floor plan where the new walls would be built.",
+   "notes": []
+  },
+  {
+   "id": "engendered",
+   "word": "engendered",
+   "meaning": "To cause or give rise to a particular feeling, situation, or condition.",
+   "hindi": "उत्पन्न करना (Utpann karna) or पैदा करना (Paida karna).",
+   "example": "The teacher's encouraging remarks engendered a sense of confidence in the students before their final exams.",
+   "notes": []
+  },
+  {
+   "id": "indigenity",
+   "word": "Indigenity",
+   "meaning": "The fact, state, or experience of being native to a particular place; the quality of being indigenous.",
+   "hindi": "स्वदेशीपन (Swadeshipan) or मूलनिवासीपन (Mulnivasipan).",
+   "example": "The festival celebrated the indigeneity of the local tribes through traditional music, dance, and food.",
+   "notes": []
+  },
+  {
+   "id": "turn of sixteenth century",
+   "word": "turn of sixteenth century",
+   "meaning": "The period of time transitioning from the 15th century to the 16th century (around 1500) or from the 16th century to the 17th century (around 1600).",
+   "hindi": "सोलहवीं शताब्दी की शुरुआत (Solahvi shatabdi ki shuruat)",
+   "example": "Many historians study the significant changes in global trade that occurred at the turn of the sixteenth century.",
+   "notes": []
+  },
+  {
+   "id": "diliquency",
+   "word": "diliquency",
+   "meaning": "An antisocial misdeed or minor crime, often committed by a young person, or a failure to pay a debt when due.",
+   "hindi": "अपराध (Apradh) or किशोर अपचारिता (Kishor Apcharita).",
+   "example": "The bank sent a notice regarding the delinquency of his credit card payments.",
+   "notes": []
+  },
+  {
+   "id": "conspicous",
+   "word": "conspicous",
+   "meaning": "Easily seen or noticed; attracting attention by being unusual or striking.",
+   "hindi": "प्रत्यक्ष (Pratyaksh) or विशिष्ट (Vishisht).",
+   "example": "She felt very conspicuous wearing a bright red dress at the formal black-tie event.",
+   "notes": []
+  },
+  {
+   "id": "appropriation",
+   "word": "appropriation",
+   "meaning": "The act of setting money aside for a specific purpose, or taking something for one's own use, typically without permission.",
+   "hindi": "विनियोग (Viniyog) or विनियोजन (Viniyojan).",
+   "example": "The government approved a large appropriation of funds to build new schools in the rural areas.",
+   "notes": []
+  },
+  {
+   "id": "fatalistic",
+   "word": "Fatalistic",
+   "meaning": "Believing that all events are predetermined and therefore inevitable, often resulting in a feeling that one cannot change or control outcomes.",
+   "hindi": "भाग्यवादी (Bhagyavaadi) or नियतिवादी (Niyativaadi).",
+   "example": "Rather than studying harder after failing a test, he took a fatalistic approach and assumed he was just bad at the subject.",
+   "notes": []
+  },
+  {
+   "id": "alarmist",
+   "word": "Alarmist",
+   "meaning": "Someone who exaggerates a danger and causes needless worry or panic.",
+   "hindi": "भय फैलानेवाला (Bhay phailanewala) or भय प्रसारक (Bhay prasarak).",
+   "example": "The news report was criticized for being alarmist and causing unnecessary panic about the weather.",
+   "notes": [
+    "Too negative - exaggerate"
+   ]
+  },
+  {
+   "id": "apprehensive",
+   "word": "apprehensive",
+   "meaning": "Anxious or fearful that something bad or unpleasant will happen.",
+   "hindi": "चिंतित (Chintit) or आशंकित (Aashankit).",
+   "example": "Many teachers are apprehensive about going back to school to teach after the long break.",
+   "notes": []
+  },
+  {
+   "id": "cynical",
+   "word": "cynical",
+   "meaning": "Believing the worst of human nature and motives; having a general distrust of others and a belief that people are motivated purely by self-interest.",
+   "hindi": "दोषदर्शी (Doshdarshi) or स्वार्थी (Swarthi).",
+   "example": "A cynical person might assume that someone who donates money to charity is only doing it for public attention and a tax write-off.",
+   "notes": []
+  },
+  {
+   "id": "disparaging",
+   "word": "Disparaging",
+   "meaning": "Expressing a low opinion of someone or something; criticizing in a disrespectful or derogatory manner.",
+   "hindi": "अपमानजनक (Apmanjanak) or निंदात्मक (Nindatmak).",
+   "example": "The politician faced heavy criticism after making disparaging remarks about his opponent's background.",
+   "notes": []
+  },
+  {
+   "id": "sunder",
+   "word": "sunder",
+   "meaning": "To break apart or in two, especially using violence; to separate or sever.",
+   "hindi": "अलग करना (Alag karna) or तोड़ना (Todna).",
+   "example": "The violent storm threatened to sunder the old wooden bridge into pieces.",
+   "notes": []
+  },
+  {
+   "id": "anachronism",
+   "word": "anachronism",
+   "meaning": "Something or someone that is chronologically out of place or belongs to a different time period.",
+   "hindi": "कालभ्रम (Kaalbharam) or समय-विरुद्ध (Samay-Viruddh)",
+   "example": "Seeing a character use a smartphone in a movie set in the 18th century is a clear anachronism.",
+   "notes": []
+  },
+  {
+   "id": "having a cold calculated view",
+   "word": "having a cold calculated view",
+   "meaning": "Having a deliberate, strategic, or carefully planned perspective aimed at achieving a specific outcome.",
+   "hindi": "सोची-समझी दृष्टि (Sochi-samjhi drishti) or रणनीतिक दृष्टिकोण (Rannitik drishtikon).",
+   "example": "She approached the negotiation with a calculated view, analyzing every potential risk before making her decision.",
+   "notes": []
+  },
+  {
+   "id": "reverie",
+   "word": "reverie",
+   "meaning": "A state of being pleasantly lost in one's thoughts; a daydream.",
+   "hindi": "दिवास्वप्न (Divasvapna) or ध्यान (Dhyan).",
+   "example": "She was lost in reverie while looking out the window during the long train ride.",
+   "notes": []
+  },
+  {
+   "id": "altruistic",
+   "word": "altruistic",
+   "meaning": "Showing unselfish concern for the welfare and well-being of others.",
+   "hindi": "परोपकारी (Paropakari) or निस्वार्थ (Niswarth).",
+   "example": "She showed an altruistic spirit by volunteering at the homeless shelter every weekend.",
+   "notes": []
+  },
+  {
+   "id": "gentrified",
+   "word": "gentrified",
+   "meaning": "Renovated and improved to conform to middle-class or affluent tastes, often displacing lower-income residents.",
+   "hindi": "कायाकल्पित (Kayakalpit) or नवानीकृत (Navanikrit)",
+   "example": "The old industrial neighborhood became gentrified with the arrival of modern cafes and luxury apartments.",
+   "notes": []
+  },
+  {
+   "id": "complicit",
+   "word": "complicit",
+   "meaning": "Involved with others in an illegal or wrong activity.",
+   "hindi": "संलिप्त (Sanlipt) or साझीदार (Sajhedar).",
+   "example": "By remaining silent, she felt complicit in the cheating scheme.",
+   "notes": []
+  },
+  {
+   "id": "confirmity",
+   "word": "confirmity",
+   "meaning": "The act of complying with rules, standards, laws, or social expectations to fit in or maintain agreement.",
+   "hindi": "अनुरूपता (Anurupata) or अनुपालन (Anupalan).",
+   "example": "Employees showed conformity to the company's culture by following the official dress code every day.",
+   "notes": []
+  },
+  {
+   "id": "overlogging",
+   "word": "overlogging",
+   "meaning": "The excessive or unsustainable cutting down of trees in a forest.",
+   "hindi": "अत्यधिक वनों की कटाई (Atyadhik vanon ki katai).",
+   "example": "Overlogging in the mountains has led to severe landslides and soil erosion during heavy rains.",
+   "notes": []
+  },
+  {
+   "id": "anthroprocene",
+   "word": "anthroprocene",
+   "meaning": "The current geological period during which human activity has been the dominant influence on Earth's climate and ecosystems.",
+   "hindi": "एंथ्रोपोसीन युग (Anthropocene Yug).",
+   "example": "Widespread plastic pollution and rapid global warming are prominent features of the Anthropocene era.",
+   "notes": []
+  },
+  {
+   "id": "vertiginous",
+   "word": "vertiginous",
+   "meaning": "Extremely steep, high, or causing a feeling of dizziness and imbalance.",
+   "hindi": "चक्करदार (Chakkardar) or अत्यधिक ऊँचा (Atyadhik Ooncha).",
+   "example": "Looking down from the top floor of the skyscraper gave him a vertiginous feeling.",
+   "notes": []
+  },
+  {
+   "id": "apalled",
+   "word": "apalled",
+   "meaning": "Filled with dismay, shock, or horror at something unpleasant or bad.",
+   "hindi": "स्तब्ध (Stabdh) or भौचक्का (Bhauchakka)",
+   "example": "Everyone was appalled by the severe damage caused by the storm.",
+   "notes": []
+  },
+  {
+   "id": "dystopian",
+   "word": "dystopian",
+   "meaning": "Relating to an imagined state or society in which there is great suffering, injustice, or oppression.",
+   "hindi": "दुस्वप्नलोक (Duswapnalok) or कष्टप्रद समाज (Kashtprad Samaj).",
+   "example": "The movie portrays a dystopian future where technology controls every aspect of human life.",
+   "notes": []
+  },
+  {
+   "id": "attenuated",
+   "word": "attenuated",
+   "meaning": "Reduced in force, effect, strength, or intensity.",
+   "hindi": "तनूकृत (Tanukrit) or कम करना (Kam karna).",
+   "example": "Wearing noise-canceling headphones helped to attenuate the loud sounds of the street traffic.",
+   "notes": []
+  },
+  {
+   "id": "hearsay",
+   "word": "hearsay",
+   "meaning": "Information received from other people that one cannot prove to be true; gossip or rumor.",
+   "hindi": "सुनी-सुनाई बात (Suni-Sunai Baat) or अफवाह (Afwah).",
+   "example": "The judge refused to accept the statement because it was only hearsay.",
+   "notes": []
+  },
+  {
+   "id": "constitutional",
+   "word": "constitutional",
+   "meaning": "Relating to an established set of fundamental principles or laws governing a state or organization.",
+   "hindi": "संवैधानिक (Samvidhanik)",
+   "example": "Freedom of speech is a fundamental constitutional right in many democratic nations.",
+   "notes": []
+  },
+  {
+   "id": "intermediation",
+   "word": "intermediation",
+   "meaning": "The action of serving as a mediator or negotiator between two or more parties.",
+   "hindi": "मध्यस्थता (Madhyasthata).",
+   "example": "Banks perform financial intermediation by taking savings from individuals and lending them to businesses in need of capital.",
+   "notes": []
+  },
+  {
+   "id": "disintermediation",
+   "word": "disintermediation",
+   "meaning": "The reduction or removal of intermediaries or middlemen from a supply chain or financial transaction.",
+   "hindi": "अमध्यस्थायीकरण (Amadhyasthayikaran) or मध्यस्थता-निवारण (Madhyasthata-Nivaran).",
+   "example": "Buying goods directly from a manufacturer's website instead of purchasing them through a retail store is an example of disintermediation.",
+   "notes": []
+  },
+  {
+   "id": "melancholic",
+   "word": "melancholic",
+   "meaning": "Feeling, expressing, or causing a deep and pensive sadness.",
+   "hindi": "उदास (Udaas) or निराशाजनक (Nirashajanak).",
+   "example": "Listening to the rainy day playlist always puts him in a melancholic mood.",
+   "notes": []
+  },
+  {
+   "id": "sake",
+   "word": "sake",
+   "meaning": "A purpose, reason, or benefit for doing something.",
+   "hindi": "खातिर (Khatir) or के लिए (Ke liye).",
+   "example": "He gave up smoking for the sake of his health.",
+   "notes": []
+  },
+  {
+   "id": "conflate",
+   "word": "conflate",
+   "meaning": "To combine two or more texts, ideas, or things into one.",
+   "hindi": "मिलाना (Milana) or एक करना (Ek karna).",
+   "example": "People often conflate wealth with happiness, but they are not the same thing.",
+   "notes": []
+  },
+  {
+   "id": "sleights",
+   "word": "sleights",
+   "meaning": "The use of dexterity or cunning, especially so as to deceive; a clever trick or skill.",
+   "hindi": "हाथ की सफ़ाई (Hath ki safai) or चालाकी (Chalaaki).",
+   "example": "The magician amazed the audience with his impressive sleights of hand.",
+   "notes": []
+  },
+  {
+   "id": "virtue",
+   "word": "virtue",
+   "meaning": "Behavior showing high moral standards or moral goodness.",
+   "hindi": "सद्गुण (Sadgun) or गुण (Gun)",
+   "example": "Honesty is a virtue that helps build long-lasting trust in any relationship.",
+   "notes": []
+  },
+  {
+   "id": "inebriate",
+   "word": "inebriate",
+   "meaning": "To make someone drunk, or a person who is habitually drunk.",
+   "hindi": "नशे में धुत (Nashe mein dhut) or शराबी (Sharabi).",
+   "example": "The security guard refused to let the inebriate man enter the venue.",
+   "notes": []
+  },
+  {
+   "id": "temperance",
+   "word": "temperance",
+   "meaning": "Moderation or self-restraint, especially in controlling desires and habits.",
+   "hindi": "संयम (Sanyam).",
+   "example": "Practicing temperance in spending money helps maintain a balanced budget.",
+   "notes": []
+  },
+  {
+   "id": "dangles",
+   "word": "dangles",
+   "meaning": "To hang loosely or swing freely.",
+   "hindi": "लटकना (Latakna) or झुलाना (Jhulana).",
+   "example": "The keys dangled from her fingertips as she opened the door.",
+   "notes": []
+  },
+  {
+   "id": "flare",
+   "word": "flare",
+   "meaning": "To burn suddenly with a bright flame or burst out with intense emotion.",
+   "hindi": "भड़कना (Bhadakna) or धधकना (Dhadakna).",
+   "example": "Tempers flared during the meeting as arguments broke out.",
+   "notes": [
+    "Like a bell - flared pants"
+   ]
+  },
+  {
+   "id": "setin",
+   "word": "SETIN",
+   "meaning": "To begin and become established, usually referring to something unpleasant like cold weather, rain, or an infection.",
+   "hindi": "शुरू होना (Shuru hona) or आरंभ होना (Arambh hona).",
+   "example": "We should head back home before the heavy rain sets in.",
+   "notes": []
+  },
+  {
+   "id": "uvula",
+   "word": "uvula",
+   "meaning": "A small, fleshy mass hanging down in the middle of the soft palate at the back of the throat.",
+   "hindi": "घंटी (Ghanti) or काकल (Kakal)",
+   "example": "When you open your mouth wide and say \"ah,\" the doctor looks at your uvula to check for swelling or infection.",
+   "notes": []
+  },
+  {
+   "id": "relic",
+   "word": "Relic",
+   "meaning": "An object surviving from an earlier time, especially one of historical or sentimental interest.",
+   "hindi": "अवशेष (Avashesh)",
+   "example": "The old typewriter on his desk is a relic from a bygone era.",
+   "notes": []
+  },
+  {
+   "id": "verve",
+   "word": "verve",
+   "meaning": "Great energy, enthusiasm, or liveliness in action or expression.",
+   "hindi": "जोश (Josh) or उत्साह (Utsaah).",
+   "example": "She performed the dance routine with incredible energy and verve.",
+   "notes": []
+  },
+  {
+   "id": "elan",
+   "word": "Elan",
+   "meaning": "Energy, style, and enthusiasm.",
+   "hindi": "उत्साह (Utsah).",
+   "example": "She delivered her presentation with great elan, impressing everyone in the room.",
+   "notes": [],
+   "pron": "/eɪˈlɒ̃/"
+  },
+  {
+   "id": "flus",
+   "word": "FLUS",
+   "meaning": "Acute contagious viral infections that cause fever, severe body aches, and respiratory symptoms; plural of flu.",
+   "hindi": "फ़्लू (Flu) or इन्फ़्लूएंज़ा (Influenza).",
+   "example": "During the cold winter months, several different flus spread quickly through schools.",
+   "notes": []
+  },
+  {
+   "id": "libel",
+   "word": "LIBEL",
+   "meaning": "A published false written statement that damages a person's reputation.",
+   "hindi": "मानहानि (Manahani) or अपलेख (Aplekh).",
+   "example": "The actor sued the magazine for libel after they published a completely false story about him.",
+   "notes": []
+  },
+  {
+   "id": "abuts",
+   "word": "abuts",
+   "meaning": "To touch or lie next to something, sharing a border or edge.",
+   "hindi": "सटा हुआ (Sata hua) or लगा हुआ (Laga hua).",
+   "example": "Our backyard abuts a peaceful forest.",
+   "notes": []
+  },
+  {
+   "id": "betsy",
+   "word": "Betsy",
+   "meaning": "A female given name, short form of Elizabeth, meaning \"pledged to God\" or \"God is my oath\".",
+   "hindi": "बेट्सी (Betsy) - ईश्वर की शपथ (Eeshwar ki shapath).",
+   "example": "Betsy packed her bag and left for college early in the morning.",
+   "notes": []
+  },
+  {
+   "id": "à votre santé!",
+   "word": "À votre santé!",
+   "meaning": "A French expression used as a toast before drinking, meaning \"To your health!\" or \"Cheers!\"",
+   "hindi": "आपके स्वास्थ्य के लिए (Aapke swasthya ke liye) or शुभकामनाएँ (Shubhkaamnayein)",
+   "example": "Before sipping their drink, they raised their glasses and said, \"À votre santé!\"",
+   "notes": []
+  },
+  {
+   "id": "apotheosis",
+   "word": "apotheosis",
+   "meaning": "The highest point in the development of something; the culmination or climax.",
+   "hindi": "पराकाष्ठा (Parakashta) or चरमोत्कर्ष (Charmotkarsh).",
+   "example": "Winning the lifetime achievement award was the apotheosis of her long career in cinema.",
+   "notes": []
+  },
+  {
+   "id": "expunged",
+   "word": "expunged",
+   "meaning": "Erased, removed, or completely wiped out, especially from a record or document.",
+   "hindi": "हटा दिया गया (Hata diya gaya) or मिटाया हुआ (Mitaya hua).",
+   "example": "The judge ordered the arrest record to be expunged after he was proven innocent.",
+   "notes": []
+  },
+  {
+   "id": "progenitor",
+   "word": "progenitor",
+   "meaning": "A direct ancestor or a person who originates an idea or movement.",
+   "hindi": "पूर्वज (Poorvaj) or जनक (Janak).",
+   "example": "Many historians consider Charles Babbage to be the progenitor of modern computing.",
+   "notes": []
+  },
+  {
+   "id": "prescient",
+   "word": "prescient",
+   "meaning": "Having or showing knowledge of events before they take place; foresighted.",
+   "hindi": "दूरदर्शी (Doordarshi).",
+   "example": "Her prescient decision to invest in the company before it became popular saved her a lot of money.",
+   "notes": []
+  },
+  {
+   "id": "notoriety",
+   "word": "Notoriety",
+   "meaning": "The state of being famous or well-known for something bad or a bad quality.",
+   "hindi": "बदनामी (Badnami) or कुख्याति (Kukhyati).",
+   "example": "The restaurant gained notoriety after several customers complained about food poisoning.",
+   "notes": []
+  },
+  {
+   "id": "impoundment",
+   "word": "impoundment",
+   "meaning": "The legal seizure and taking of property into custody, or the confinement of water in a reservoir.",
+   "hindi": "ज़ब्ती (Zabti) or जलसंचय (Jalsanchay).",
+   "example": "The police ordered the impoundment of the vehicle after finding out the driver had no license.",
+   "notes": []
+  },
+  {
+   "id": "condusive",
+   "word": "condusive",
+   "meaning": "Making a certain situation or outcome likely or possible; helpful or favorable.",
+   "hindi": "अनुकूल (Anukool) or सहायक (Sahayak).",
+   "example": "A quiet environment is conducive to studying for exams.",
+   "notes": []
+  }
+ ]
+}
